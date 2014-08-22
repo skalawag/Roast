@@ -5,5 +5,10 @@
   <%= @profile.name %>
 </p>
 
+<h3>Beans in <%= @profile.name %></h3>
+<% @profile.beans.each do |b| %>
+	<p><%= b.name %>: <%= b.ratio %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
