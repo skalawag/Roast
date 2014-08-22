@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bean.name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @bean.green_weight %>
+</p>
+
+<%= link_to 'Edit', edit_bean_path(@bean) %> |
+<%= link_to 'Back', beans_path %>

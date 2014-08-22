@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Beans:</strong>
+  <%= @batch.beans_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @batch.amount %>
+</p>
+
+<%= link_to 'Edit', edit_batch_path(@batch) %> |
+<%= link_to 'Back', batches_path %>

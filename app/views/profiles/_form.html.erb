@@ -1,0 +1,26 @@
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+<!-- Here should go a table with columns COFFEE(from select) and RATIO(decimal input). Has an ADD BEAN button that generates a row. -->
+
+
+  <div class="actions">
+<!--     On SUBMIT, it should check for 100% ratio and *Maybe* Unique coffees on select/can't select the same coffee to add twice. -->
+    <%= f.submit %>
+  </div>
+<% end %>
