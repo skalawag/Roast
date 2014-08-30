@@ -1,0 +1,20 @@
+Sat, 30 Aug 2014 11:49:35 -0500
+README.rdoc	Thu, 17 Apr 2014 11:58:27 -0500
+app/controllers/application_controller.rb	Thu, 17 Apr 2014 11:58:27 -0500
+app/controllers/batches_controller.rb	Tue, 19 Aug 2014 20:06:38 -0500
+app/controllers/beans_controller.rb	Fri, 22 Aug 2014 16:01:58 -0500
+app/controllers/ingredients_controller.rb	Sat, 30 Aug 2014 10:51:52 -0500
+app/controllers/orders_controller.rb	Tue, 19 Aug 2014 20:05:52 -0500
+app/controllers/profiles_controller.rb	Sat, 30 Aug 2014 11:32:47 -0500
+app/controllers/welcome_controller.rb	Thu, 17 Apr 2014 12:01:54 -0500
+app/helpers/application_helper.rb	Thu, 17 Apr 2014 11:58:27 -0500
+app/helpers/batches_helper.rb	Tue, 19 Aug 2014 20:06:38 -0500
+app/helpers/beans_helper.rb	Tue, 19 Aug 2014 11:39:20 -0500
+app/helpers/orders_helper.rb	Tue, 19 Aug 2014 20:05:52 -0500
+app/helpers/profiles_helper.rb	Tue, 19 Aug 2014 11:40:09 -0500
+app/helpers/welcome_helper.rb	Thu, 17 Apr 2014 12:01:54 -0500
+app/models/batch.rb	Tue, 19 Aug 2014 20:06:38 -0500
+app/models/bean.rb	Wed, 27 Aug 2014 14:06:36 -0500
+app/models/ingredient.rb	Thu, 21 Aug 2014 19:33:16 -0500
+app/models/order.rb	Tue, 19 Aug 2014 20:05:52 -0500
+app/models/profile.rb	Wed, 27 Aug 2014 14:09:53 -0500
