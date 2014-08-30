@@ -1,0 +1,26 @@
+<%= form_for [@profile, @ingredient] do |f| %>
+	  <% if @ingredient.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@ingredient.errors.count, "error") %> prohibited this bean from being saved:</h2>
+
+	      <ul>
+		      <% @ingredient.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+	  <%= f.hidden_field :profile_id, :value => @profile.id %>
+	  <div class="field">
+	    <%= f.label :bean_id %><br>
+	    <%= select(:ingredient, :bean_id, options_for_select(Profile.find(@profile).beanlist)) %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :quantity %><br>
+	    <%= f.number_field :quantity, :step => 'any' %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit "Add Bean", :profile_id => @profile.id %>
+	  </div>
+<% end %>

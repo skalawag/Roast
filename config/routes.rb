@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :orders
 
-  resources :profiles
+  resources :profiles do
+    resources :ingredients
+  end
 
   resources :beans
 
