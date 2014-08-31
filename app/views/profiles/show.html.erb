@@ -6,9 +6,9 @@
 </p>
 
 <h3>Beans in <%= @profile.name %></h3>
-<!-- Could this be done instead by listing all ingredients with @profile.id? Makes more sense. -->
-<% @profile.beans.each do |b| %>
-	<p><%= b.name %>: <%= b.ratio %></p>
+
+<% Ingredient.where(profile_id: @profile.id).each do |t| %>
+	<p><%= Bean.find(t.bean_id).name %>: <%= t.quantity %></p>
 <% end %>
 
 <%= link_to "Add Bean", new_profile_ingredient_path(:profile_id => @profile.id) %>
