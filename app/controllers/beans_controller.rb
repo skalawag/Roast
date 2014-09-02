@@ -69,6 +69,6 @@ class BeansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bean_params
-      params.require(:bean).permit(:name, :green_weight)
+      params.require(:bean).permit(:name, :weight_loss_factor)
     end
 end

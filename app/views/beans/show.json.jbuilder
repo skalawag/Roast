@@ -1,1 +1,1 @@
-json.extract! @bean, :id, :name, :green_weight, :created_at, :updated_at
+json.extract! @bean, :id, :name, :weight_loss_factor, :created_at, :updated_at
