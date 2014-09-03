@@ -14,7 +14,7 @@
 	  <%= f.hidden_field :profile_id, :value => @profile.id %>
 	  <div class="field">
 	    <%= f.label :bean_id %><br>
-	    <%= select(:ingredient, :bean_id, options_for_select(Profile.find(@profile).beanlist)) %>
+	    <%= select(:ingredient, :bean_id, options_for_select(Profile.find(@profile).bean_list)) %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :quantity %><br>
