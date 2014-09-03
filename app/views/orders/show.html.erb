@@ -1,13 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Roast:</strong>
-  <%= @order.roast_id %>
+  <strong>Profile:</strong>
+  <%= @order.profile_id %>
 </p>
 
 <p>
-  <strong>Amount:</strong>
-  <%= @order.amount %>
+  <strong>Eight oz:</strong>
+  <%= @order.eight_oz %>
+</p>
+
+<p>
+  <strong>Twelve oz:</strong>
+  <%= @order.twelve_oz %>
+</p>
+
+<p>
+  <strong>Sixteen oz:</strong>
+  <%= @order.sixteen_oz %>
+</p>
+
+<p>
+  <strong>Eighty oz:</strong>
+  <%= @order.eighty_oz %>
+</p>
+
+<p>
+  <strong>Total oz:</strong>
+  <%= @order.total_oz %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |

@@ -56,7 +56,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url }
+      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:roast_id, :amount)
+      params.require(:order).permit(:profile_id, :eight_oz, :twelve_oz, :sixteen_oz, :eighty_oz, :total_oz)
     end
 end
