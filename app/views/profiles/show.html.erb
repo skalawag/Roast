@@ -8,7 +8,7 @@
 <h3>Beans in <%= @profile.name %></h3>
 
 <% Ingredient.where(profile_id: @profile.id).each do |t| %>
-	<p><%= Bean.find(t.bean_id).name %>: <%= t.quantity %></p>
+	<p><%= Bean.find(t.bean_id).name %>: <%= number_to_percentage t.quantity, precision: 2 %>	<%= link_to "Update", edit_profile_ingredient_path(:id => t.id, :profile_id => @profile.id) %> <%= link_to "Delete", [@profile, t], method: :delete %></p>
 <% end %>
 
 <%= link_to "Add Bean", new_profile_ingredient_path(:profile_id => @profile.id) %>
