@@ -1,8 +1,9 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+  before_filter :set_profile
   
   def index
-    @ingredients = Ingredient.all
+    @ingredients = @profile.ingredients
   end
 
   # GET /ingredient/1
@@ -12,7 +13,6 @@ class IngredientsController < ApplicationController
 
   # GET /ingredient/new
   def new
-  	@profile = Profile.find(params[:profile_id])
     @ingredient = Ingredient.new
   end
 
@@ -23,12 +23,11 @@ class IngredientsController < ApplicationController
   # POST /ingredient
   # POST /ingredient.json
   def create
-  	@profile = Profile.find(params[:profile_id])
     @ingredient = Ingredient.new(ingredient_params, profile_id: @profile_id)
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to profile_path(@profile), notice: 'Ingredient was successfully created.' }
+        format.html { redirect_to profile_path(@profile), notice: "#{Bean.find(@ingredient.bean_id).name} was successfully added to the profile." }
         format.json { render :show, status: :created, location: @ingredient }
       else
         format.html { render :new }
@@ -42,7 +41,7 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to profile_path(@profile), notice: 'Ingredient was successfully updated.' }
+        format.html { redirect_to profile_path(@profile), notice: "#{Bean.find(@ingredient.bean_id).name} was successfully updated." }
         format.json { render :show, status: :ok, location: @ingredient }
       else
         format.html { render :edit }
@@ -56,7 +55,7 @@ class IngredientsController < ApplicationController
   def destroy
     @ingredient.destroy
     respond_to do |format|
-      format.html { redirect_to redirect_to profile }
+      format.html { redirect_to profile_path(@profile), notice: "#{Bean.find(@ingredient.bean_id).name} was successfully removed from the profile." }
       format.json { head :no_content }
     end
   end
@@ -64,8 +63,11 @@ class IngredientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ingredient
-      @profile = Profile.find(params[:profile_id])
       @ingredient = Ingredient.find(params[:id])
+    end
+
+    def set_profile
+      @profile = Profile.find(params[:profile_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
