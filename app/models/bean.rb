@@ -1,5 +1,5 @@
 class Bean < ActiveRecord::Base
-	has_many :ingredients
+	has_many :ingredients, :dependent => :destroy
 	has_many :profiles, :through => :ingredients
 
 # Used to show the beans within a profile and its ratio. Should try moving this to profiles instead.
