@@ -16,7 +16,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.profile_id %></td>
+        <td><%= Profile.find(order.profile_id).name %></td>
         <td><%= order.eight_oz %></td>
         <td><%= order.twelve_oz %></td>
         <td><%= order.sixteen_oz %></td>

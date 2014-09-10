@@ -2,7 +2,7 @@
 
 <p>
   <strong>Profile:</strong>
-  <%= @order.profile_id %>
+  <%= Profile.find(@order.profile_id).name %>
 </p>
 
 <p>
