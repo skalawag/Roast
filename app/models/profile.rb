@@ -1,5 +1,5 @@
 class Profile < ActiveRecord::Base
-	has_many :ingredients
+	has_many :ingredients, :dependent => :destroy
 	has_many :orders, :dependent => :destroy
 	has_many :beans, :through => :ingredients
 	before_save :check_ratio
