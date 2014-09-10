@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :profile_id %><br>
-    <%= f.number_field :profile_id %>
+    <%= select(:order, :profile_id, options_for_select(@order.profile_list)) %>
   </div>
   <div class="field">
     <%= f.label :eight_oz %><br>
@@ -30,10 +30,6 @@
   <div class="field">
     <%= f.label :eighty_oz %><br>
     <%= f.number_field :eighty_oz %>
-  </div>
-  <div class="field">
-    <%= f.label :total_oz %><br>
-    <%= f.number_field :total_oz %>
   </div>
   <div class="actions">
     <%= f.submit %>
