@@ -13,7 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer',  platforms: :ruby
 
 # Specifies Ruby Version
-ruby '>= 2.1.0'
+ruby '2.1.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -46,10 +46,6 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner', '1.2.0'
 end
-end
-end
-end
-
 
 group :production do
   # Use postgresql as the database for Active Record
