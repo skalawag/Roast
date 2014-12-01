@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140901153100) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "batches", force: true do |t|
     t.integer  "beans_id"
     t.integer  "amount"
