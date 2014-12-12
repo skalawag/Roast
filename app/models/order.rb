@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
-  has_one :profile
+  has_many :profiles, :through => :products
+  has_many :products, :dependent => :destroy
   before_save :totals, :ratio_validation
 
   def profile_list
