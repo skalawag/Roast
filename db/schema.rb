@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212212916) do
+ActiveRecord::Schema.define(version: 20141212221412) do
 
   create_table "batches", force: true do |t|
     t.integer  "beans_id"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20141212212916) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "weight_loss_factor"
+  end
+
+  create_table "chunks", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "bean_id"
+    t.float    "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ingredients", force: true do |t|
